@@ -5,8 +5,8 @@ const User = require("../models/User"); // Make sure the User model path is corr
 // Register a new user
 router.post('/register', async (req, res) => {
     try {
-        const { name, email, password, age } = req.body;
-        const newUser = await User.create({ name, email, password, age });
+        const { name,phone, email, password, age } = req.body;
+        const newUser = await User.create({ name,phone, email, password, age });
         res.json(newUser);
     } catch (error) {
         res.status(500).json({ error: "Error creating user" });
