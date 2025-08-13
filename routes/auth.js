@@ -4,7 +4,7 @@ const router = express.Router();
 const User = require("../models/User");
 
 router.post("/register", async (req, res) => {
-    const { name, email, password, age } = req.body;
+    const { name, email, password, age,phone } = req.body;
 
 
 
@@ -18,7 +18,8 @@ router.post("/register", async (req, res) => {
             name,
             email,
             password: hashedPassword,
-            age
+            age,
+            phone
         });
 
 
@@ -46,7 +47,8 @@ router.post("/login", async (req, res) => {
             _id: user._id,
             name: user.name,
             email: user.email,
-            age: user.age
+            age: user.age,
+            phone: user.phone
     }
 });
 
